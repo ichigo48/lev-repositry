@@ -9,7 +9,7 @@
     <body>
         <h1>Blog Name</h1>
         <div class='posts'>
-           @foreach (4posts as $post)
+           @foreach ($posts as $post)
                 <div class ='post'>
                     <h2 class='title'>{{ $post->body}}</p>
                 </div>
