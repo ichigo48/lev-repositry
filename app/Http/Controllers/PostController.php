@@ -12,4 +12,3 @@ class PostController extends Controller
         return view('index')->with(['posts' => $post->get()]);  
     }
 }
-?>
