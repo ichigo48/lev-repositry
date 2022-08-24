@@ -2,15 +2,20 @@
 
 namespace App;
 
-use App\Post;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    public function index(Post $post)
+    use SoftDeletes;
+    
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+    
+    public function GstPaginateByLimit($limit_count = 10)
     {
-    return $post->get();
-
-        return $post->get();
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 }
